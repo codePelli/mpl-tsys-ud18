@@ -24,11 +24,11 @@ public class ConnectionSQL {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(ip, user, pass);
             
-            System.out.println("Connected to the server DB");
+            System.out.println("Conectado a la BBDD");
             
         } catch (SQLException | ClassNotFoundException ex) {
         	
-            System.out.println("ERROR connecting to DB");
+            System.out.println("ERROR al conectar con la BBDD");
             System.out.println(ex);
         }
     }
@@ -38,11 +38,11 @@ public class ConnectionSQL {
         try {
         	
             connection.close();
-            System.out.println("Connection with the server has been CLOSED succesfully");
+            System.out.println("Te desconectaste de la BBDD");
             
         } catch (SQLException ex) {
         	
-            System.out.println("FAILED to disconnect");
+            System.out.println("ERROR al desconectar");
         }
     }
 
@@ -54,11 +54,11 @@ public class ConnectionSQL {
             Statement st = connection.createStatement();
             st.executeUpdate(query);
             
-            System.out.println("Table " + tableName + " created successfully.");
+            System.out.println("Tabla " + tableName + " creada");
             
         } catch (SQLException ex) {
         	
-            System.out.println("ERROR creating table " + tableName);
+            System.out.println("ERROR al crear la tabla " + tableName);
             System.out.println(ex.getMessage());
         }
     }
@@ -71,11 +71,11 @@ public class ConnectionSQL {
             Statement st = connection.createStatement();
             st.executeUpdate(query);
             
-            System.out.println("Data inserted successfully into " + tableName);
+            System.out.println("Datos añadidos a la tabla " + tableName);
             
         } catch (SQLException ex) {
         	
-            System.out.println("ERROR inserting data into " + tableName);
+            System.out.println("ERROR al insertar datos a la tabla " + tableName);
             System.out.println(ex.getMessage());
         }
     }
@@ -98,7 +98,7 @@ public class ConnectionSQL {
             
         } catch (SQLException ex) {
         	
-            System.out.println("ERROR collecting data from " + tableName);
+            System.out.println("ERROR al imprimir los datos de la tabla " + tableName);
             System.out.println(ex.getMessage());
         }
     }
@@ -113,16 +113,16 @@ public class ConnectionSQL {
 
             if (rowsDltd > 0) {
             	
-                System.out.println("Data from " + tableName + "deleted");
+                System.out.println("Datos de la tabla " + tableName + "eliminados");
                 
             } else {
             	
-                System.out.println("No data deleted from " + tableName + " (Condition: " + condition + ")");          
+                System.out.println("No hay datos en la tabla " + tableName + " para borrar");          
             }
             
         } catch (SQLException ex) {
         	
-            System.out.println("ERROR deleting data from " + tableName);
+            System.out.println("ERROR al borrar datos de la tabla " + tableName);
             System.out.println(ex.getMessage());
         }
     }
@@ -135,11 +135,11 @@ public class ConnectionSQL {
             Statement st = connection.createStatement();
             st.executeUpdate(query);
             
-            System.out.println("Table " + tableName + " dropped successfully.");
+            System.out.println("Tabla " + tableName + " borrada");
 
     	} catch (SQLException ex) {
     		
-            System.out.println("ERROR dropping table " + tableName);
+            System.out.println("ERROR al borrar la tabla " + tableName);
             System.out.println(ex.getMessage());
     	}
 
