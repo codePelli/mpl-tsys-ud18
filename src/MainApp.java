@@ -2,8 +2,9 @@
 public class MainApp {
 
 	public static void main(String[] args) {
-
-	    ConnectionSQL connection = new ConnectionSQL("jdbc:mysql://localhost:33060/mysql", "root", "password");
+		
+		//Conexion a bbdd llamada "java"
+	    ConnectionSQL connection = new ConnectionSQL("jdbc:mysql://localhost:33060/java", "root", "password"); 
 	    
 	    ejercicio1(connection);
 	    ejercicio2(connection);
