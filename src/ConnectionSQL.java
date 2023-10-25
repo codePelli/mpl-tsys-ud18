@@ -63,7 +63,7 @@ public class ConnectionSQL {
         }
     }
 		
-    public void insertData(String tableName, String columns, String values) {
+    public void insert(String tableName, String columns, String values) {
     	
         try {
         	
@@ -80,7 +80,7 @@ public class ConnectionSQL {
         }
     }
 
-    public void selectData(String tableName) {
+    public void select(String tableName) {
     	
         try {
         	
@@ -103,7 +103,7 @@ public class ConnectionSQL {
         }
     }
 
-    public void deleteData(String tableName, String condition) {
+    public void delete(String tableName, String condition) {
     	
         try {
         	
@@ -127,7 +127,7 @@ public class ConnectionSQL {
         }
     }
     
-    public void dropTable(String tableName) {
+    public void drop(String tableName) {
     	
     	try {
     		
