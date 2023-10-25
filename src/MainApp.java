@@ -21,7 +21,8 @@ public class MainApp {
 		connection.dropTable("Fabricantes");
 		
 		connection.createTable("Fabricantes", "Codigo INT PRIMARY KEY AUTO_INCREMENT, Nombre NVARCHAR(100)");
-        connection.createTable("Articulos", "Codigo INT PRIMARY KEY AUTO_INCREMENT, CodigoFabricante INT, Nombre NVARCHAR(100), Precio INT, Fabricante INT, FOREIGN KEY (CodigoFabricante) REFERENCES Fabricantes (Codigo) ON DELETE CASCADE ON UPDATE CASCADE");
+        connection.createTable("Articulos", "Codigo INT PRIMARY KEY AUTO_INCREMENT, CodigoFabricante INT, Nombre NVARCHAR(100), "
+        		+ "Precio INT, Fabricante INT, FOREIGN KEY (CodigoFabricante) REFERENCES Fabricantes (Codigo) ON DELETE CASCADE ON UPDATE CASCADE");
         
         connection.insertData("Fabricantes", "Nombre", "'Nike'");
         connection.insertData("Fabricantes", "Nombre", "'Adidas'");
@@ -59,7 +60,8 @@ public class MainApp {
 		connection.dropTable("Almacenes");
 		
 		connection.createTable("Almacenes", "codigo INT PRIMARY KEY, lugar NVARCHAR(100), capacidad INT");
-		connection.createTable("Cajas", "num_referencia CHAR(5) PRIMARY KEY, contenido NVARCHAR(100), valor INT, almacen INT, FOREIGN KEY (almacen) REFERENCES Almacenes (codigo) ON DELETE CASCADE ON UPDATE CASCADE");
+		connection.createTable("Cajas", "num_referencia CHAR(5) PRIMARY KEY, contenido NVARCHAR(100), valor INT, "
+				+ "almacen INT, FOREIGN KEY (almacen) REFERENCES Almacenes (codigo) ON DELETE CASCADE ON UPDATE CASCADE");
 
 		connection.insertData("Almacenes", "codigo, lugar, capacidad", "1, 'Almacen Tarragona', 500");
 		connection.insertData("Almacenes", "codigo, lugar, capacidad", "2, 'Almacen Reus', 1500");
@@ -78,7 +80,8 @@ public class MainApp {
         connection.dropTable("Peliculas");
 
         connection.createTable("Peliculas", "codigo INT PRIMARY KEY, nombre NVARCHAR(100), calificacion_edad INT");
-        connection.createTable("Salas", "codigo INT PRIMARY KEY, nombre NVARCHAR(100), pelicula INT, FOREIGN KEY (pelicula) REFERENCES Peliculas (codigo) ON DELETE CASCADE ON UPDATE CASCADE");
+        connection.createTable("Salas", "codigo INT PRIMARY KEY, nombre NVARCHAR(100), "
+        		+ "pelicula INT, FOREIGN KEY (pelicula) REFERENCES Peliculas (codigo) ON DELETE CASCADE ON UPDATE CASCADE");
 
         connection.insertData("Peliculas", "codigo, nombre, calificacion_edad", "1, 'El caballero oscuro', 16");
         connection.insertData("Peliculas", "codigo, nombre, calificacion_edad", "2, 'Tenet', 18");

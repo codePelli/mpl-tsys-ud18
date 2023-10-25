@@ -109,9 +109,9 @@ public class ConnectionSQL {
         	
             String query = "DELETE FROM " + tableName + " WHERE " + condition;
             Statement st = connection.createStatement();
-            int rowsDltd = st.executeUpdate(query);
+            int filas = st.executeUpdate(query);
 
-            if (rowsDltd > 0) {
+            if (filas > 0) {
             	
                 System.out.println("Datos de la tabla " + tableName + "eliminados");
                 
